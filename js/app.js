@@ -22,7 +22,20 @@ function ready() {
         let button = addCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
+
+    document.getElementsByClassName('purchase-btn')[0].addEventListener('click', purchaseClicked)
 }
+
+function purchaseClicked() {
+    console.log('oqckcnascnn')
+    alert('از خرید شما متشکریم')
+    let cartItem = document.getElementsByClassName('cart-section-content')[0]
+    while (cartItem.hasChildNodes()) {
+        cartItem.removeChild(cartItem.firstChild)
+    }
+    updateCartTotal()
+}
+
 
 function removeCartItem(event) {
     console.log('clicked')
@@ -81,6 +94,7 @@ function addItemToCart(title, price) {
         .addEventListener('change', quantityChanged)
 }
 
+
 function updateCartTotal() {
     let cartItem = document.getElementsByClassName('cart-section-content')[0]
     let cartRows = cartItem.getElementsByClassName('detail-food-selected')
@@ -102,3 +116,39 @@ function updateCartTotal() {
     document.getElementsByClassName('total-cost-food')[0].innerText = total + 'تومان'
     console.log(total)
 }
+
+//send comment
+
+const comment_form = {
+    username: document.getElementById('name'),
+    email: document.getElementById('email'),
+    object: document.getElementById('object'),
+    comment: document.getElementById('comment'),
+    btn_send: document.getElementById('send-comment-btn')
+}
+comment_form.btn_send.addEventListener('click', () => {
+    console.log("jkbajk");
+    const request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            if (request.responseText == true) {
+                alert("نظر شما با موفقیت ارسال شد :)");
+                comment_form.username.value = "";
+                comment_form.email.value = "";
+                comment_form.object.value = "";
+                comment_form.comment.value = "";
+            } else {
+                alert("تمامی فیلد ها باید پر شوند :(")
+            }
+        }
+    }
+    const requestData = `name=${comment_form.username.value}&email=${comment_form.email.value}
+                        &object=${comment_form.object.value}&comment=${comment_form.comment.value}`
+    console.log(requestData);
+
+    request.open('post', 'check.php');
+    request.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
+    request.send(requestData);
+
+});
