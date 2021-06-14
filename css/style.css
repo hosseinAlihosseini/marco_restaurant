@@ -703,13 +703,13 @@ header {
     .mynavbar ul li a {
         display: block;
     }
+    .mynavbar form {
+        display: none;
+    }
     header {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .mynavbar form {
-        display: none;
     }
     .wellcome-inner {
         margin-top: 0px;

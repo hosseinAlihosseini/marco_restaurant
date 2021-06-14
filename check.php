@@ -1,4 +1,5 @@
 <?php
+
 $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
 
 $name = isset($_POST['name']) ? $_POST['name'] : '';
