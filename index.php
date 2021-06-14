@@ -34,13 +34,13 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                 </button>
                 <div class="collapse navbar-collapse mynavbar" id="myNavbar">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="nav-link">خانه</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">درباره ما</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">خدمات</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">منو</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">رزرو</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">گالری</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">تماس با ما</a></li>
+                        <li class="nav-item"><a href="#">خانه</a></li>
+                        <li class="nav-item"><a href="#">درباره ما</a></li>
+                        <li class="nav-item"><a href="#">خدمات</a></li>
+                        <li class="nav-item"><a href="#">منو</a></li>
+                        <li class="nav-item"><a href="#">رزرو</a></li>
+                        <li class="nav-item"><a href="#">گالری</a></li>
+                        <li class="nav-item"><a href="#">تماس با ما</a></li>
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="input-group">
@@ -255,10 +255,6 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                                 <span>سبد خرید</span>
                             </div>
                             <hr style="background-color: #ccc;margin: 0px;">
-
-                            <div class="cart-section-empty">
-                                <p>سبد خرید شما خالی است</p>
-                            </div>
                             <div class="cart-section-content">
                             </div>
                             <div class="price-total">
@@ -266,8 +262,7 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                                 <p class="total-cost-food"> 0 <span
                                             style="font-weight: lighter;font-size: 13px">تومان</span></p>
                                 <div class="btns-pay-can">
-                                    <a href="#" class="btn btn-success">پرداخت</a>
-                                    <a href="#" class="btn btn-danger">پاک کردن</a>
+                                    <button class="btn btn-success purchase-btn">پرداخت</button>
                                 </div>
                             </div>
                         </div>
@@ -285,9 +280,9 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                 <div class="port-sec">
                     <div class="btn-filter col-xs-12 text-center">
                         <button class="filter active" data-filter="all"> نمایش همه</button>
-                        <button class="filter" data-filter=".cat1"> صبحانه</button>
-                        <button class="filter" data-filter=".cat2">ناهار</button>
-                        <button class="filter" data-filter=".cat3">شام</button>
+                        <button class="filter" data-filter=".cat1">خدمات پذیرایی</button>
+                        <button class="filter" data-filter=".cat2">دسر</button>
+                        <button class="filter" data-filter=".cat3">نوشیدنی</button>
                     </div>
                     <div class="row mixit m-0">
                         <div class="col-md-4 mix cat1 filter-img mb-3">
@@ -299,7 +294,7 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                         <div class="col-md-4 mix cat2 filter-img mb-3">
                             <img src="img/gallery_3.jpg" class="img-fluid" alt="img">
                         </div>
-                        <div class="col-md-4 mix cat3 filter-img mb-3">
+                        <div class="col-md-4 mix cat3 cat1   filter-img mb-3">
                             <img src="img/gallery_4.jpg" class="img-fluid" alt="img">
                         </div>
                         <div class="col-md-4 mix cat3 filter-img mb-3">
@@ -332,118 +327,6 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="header-gallery">
-                    <img src="img/fish.png">
-                    <h1>گالری تصاویر ما</h1>
-                    <p>حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
-                        رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                </div>
-                <div class="port-sec">
-                    <div class="btn-filter col-xs-12 text-center">
-                        <button class="filter active" data-filter="all"> نمایش همه</button>
-                        <button class="filter" data-filter=".cat1"> صبحانه</button>
-                        <button class="filter" data-filter=".cat2">ناهار</button>
-                        <button class="filter" data-filter=".cat3">شام</button>
-                    </div>
-                    <div class="row mixit m-0">
-                        <div class="col-md-4 mix cat1 filter-img mb-3">
-                            <img src="img/gallery_1.jpg" class="img-fluid" alt="img">
-                        </div>
-                        <div class="col-md-4 mix cat2 filter-img mb-3">
-                            <img src="img/gallery_2.jpg" class="img-fluid" alt="img">
-                        </div>
-                        <div class="col-md-4 mix cat2 filter-img mb-3">
-                            <img src="img/gallery_3.jpg" class="img-fluid" alt="img">
-                        </div>
-                        <div class="col-md-4 mix cat3 filter-img mb-3">
-                            <img src="img/gallery_4.jpg" class="img-fluid" alt="img">
-                        </div>
-                        <div class="col-md-4 mix cat3 filter-img mb-3">
-                            <img src="img/gallery_5.jpg" class="img-fluid" alt="img">
-                        </div>
-                        <div class="col-md-4 mix cat1 filter-img mb-3">
-                            <img src="img/gallery_6.jpg" class="img-fluid" alt="img">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-section">
-                    <div class="send-comment-title">
-                        <img src="img/chat.png">
-                        <h1>ارسال نظر</h1>
-                        <p>نظرات و پیشنهادات خود را برای ما ارسال کنید</p>
-                    </div>
-                    <div class="send-comment-content">
-                        <div class="send-comment-form">
-                            <div class="send-comment-form-row">
-                                <input type="text" id="name" autocomplete="off" placeholder="نام">
-                                <input type="email" id="email" placeholder="ایمیل">
-                                <input type="text" id="object" placeholder="موضوع">
-                            </div>
-                            <textarea id="comment" cols="100" rows="7"
-                                      placeholder="متن مورد نظر را وارد کنید..."></textarea>
-                            <button id="send-comment-btn" type="submit">ارسال نظر</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--<div class="row weblog-section">
-                <div class="header-gallery">
-                    <img src="img/writing.png">
-                    <h1>آخرین اخبار وبلاگ</h1>
-                    <p>حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                </div>
-                <div class="weblog-section-content col-12">
-                    <div class="row">
-                        <div class="weblog-section-content-card col-lg-4">
-                            <img src="img/blog1.jpg">
-                            <ul class="nav-info">
-                                <li>26 اردیبهشت 1400</li>
-                                <li>نوشته شده توسط حسین</li>
-                            </ul>
-                            <div class="weblog-section-content-inner">
-                                <a href="#">مختصر در مورد نحوه تهیه ماکارونی</a>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است</p>
-                            </div>
-                            <div class="show-more-btn">
-                                <a href="#">ادامه مطلب</a>
-                            </div>
-                        </div>
-                        <div class="weblog-section-content-card col-lg-4">
-                            <img src="img/blog1.jpg">
-                            <ul class="nav-info">
-                                <li>26 اردیبهشت 1400</li>
-                                <li>نوشته شده توسط حسین</li>
-                            </ul>
-                            <div class="weblog-section-content-inner">
-                                <a href="#">مختصر در مورد نحوه تهیه ماکارونی</a>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است</p>
-                            </div>
-                            <div class="show-more-btn">
-                                <a href="#">ادامه مطلب</a>
-                            </div>
-                        </div>
-                        <div class="weblog-section-content-card col-lg-4">
-                            <img src="img/blog1.jpg">
-                            <ul class="nav-info">
-                                <li>26 اردیبهشت 1400</li>
-                                <li>نوشته شده توسط حسین</li>
-                            </ul>
-                            <div class="weblog-section-content-inner">
-                                <a href="#">مختصر در مورد نحوه تهیه ماکارونی</a>
-                                <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است</p>
-                            </div>
-                            <div class="show-more-btn">
-                                <a href="#">ادامه مطلب</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-
         </div>
 
         <div class="container-fluid footer-section p-0">
@@ -454,9 +337,9 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                         بوده است.</p>
                     <ul>
                         <li class="nav-item"><a href="#"><i class="fa fa-telegram"></i></a></li>
-                        <li class="nav-item"><a href="#"><i class="fa fa-telegram"></i></a></li>
-                        <li class="nav-item"><a href="#"><i class="fa fa-telegram"></i></a></li>
-                        <li class="nav-item"><a href="#"><i class="fa fa-telegram"></i></a></li>
+                        <li class="nav-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li class="nav-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="nav-item"><a href="#"><i class="fa fa-google"></i></a></li>
                     </ul>
                 </div>
                 <div class="service-marco-footer col-lg-3 col-md-6">
@@ -482,11 +365,11 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
                 <div class="contact-marco-footer col-lg-3 col-md-6">
                     <h4>تماس بگیرید</h4>
                     <ul class="nav navbar-nav footer-menu">
-                        <li><a href="#">پشتیبانی</a></li>
-                        <li><a href="#">حرفه</a></li>
-                        <li><a href="#">سرآشپزها</a></li>
-                        <li><a href="#">مشتریان</a></li>
-                        <li><a href="#">حریم خصوصی</a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i>   09394362314</a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i>   09390147540</a></li>
+                        <li><a href="#"><i class="fa fa-comment"></i>   info@marco.com</a></li>
+                        <li><a href="#"><i class="fa fa-comment"></i>   hello@marco.com</a></li>
+                        <li><a href="#"><i class="fa fa-map"></i>   کاشان-بلوار امام رضا </a></li>
                     </ul>
                 </div>
             </div>
@@ -496,6 +379,7 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
         </div>
 
     </div>
+
 </div>
 
 <script src="js/jquery.min.js"></script>
@@ -513,7 +397,6 @@ $con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
     function myFunc(x) {
         x.classList.toggle("change");
     }
-    console.log("lalabl")
 </script>
 </body>
 
