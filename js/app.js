@@ -81,8 +81,6 @@ function addItemToCart(title, price) {
         .addEventListener('change', quantityChanged)
 }
 
-
-
 function updateCartTotal() {
     let cartItem = document.getElementsByClassName('cart-section-content')[0]
     let cartRows = cartItem.getElementsByClassName('detail-food-selected')

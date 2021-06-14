@@ -1,3 +1,8 @@
+<?php
+//include 'config.php';
+$con_db = mysqli_connect("localhost", "root", "", "marco_restaurant");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -105,349 +110,228 @@
         </div>
 
         <div class="container">
-        <div class="row mt-5 mb-5">
-                    <div class="col-12">
-                        <div class="menu-food-header">
-                            <h1>منوی غذای ما</h1>
-                            <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-9">
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#Breakfast">صبحانه</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#Lunch">ناهار</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#Dinner">شام</a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div id="Breakfast" class="container-food tab-pane active p-0">
-                                        <div class="list-of-food">
+            <div class="row mt-5 mb-5">
+                <div class="col-12">
+                    <div class="menu-food-header">
+                        <img src="img/menu.png">
+                        <h1>منوی غذای ما</h1>
+                        <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                            مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#kebab">چلوکباب</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#feed">شنیتسل و خوراک</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#stew">خورشت</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#appetizer">پیش غذا</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="kebab" class="container-food tab-pane active p-0">
+                                    <div class="list-of-food">
+                                        <?php
+                                        $postsql = "SELECT * FROM `food` where type='kebab' ORDER BY `id` DESC;";
+                                        $postquery = mysqli_query($con_db, $postsql);
+                                        while ($postfetch = mysqli_fetch_assoc($postquery)) {
+                                            ?>
                                             <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
+                                                <img src=<?php echo $postfetch["img"]; ?>>
                                                 <div class="detail-food">
                                                     <div class="detail-food-title">
-                                                        <h4>نان</h4>
+                                                        <h5 class="food-title"><?php echo $postfetch["title"]; ?></h5>
                                                         <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
+                                                            <?php echo $postfetch["bodytxt"]; ?>
                                                         </p>
                                                         <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
+                                                            <p class="cost-food"><?php echo $postfetch["price"]; ?>
+                                                                <span style="font-weight: lighter;">تومان</span></p>
                                                             <button class="add-cart-btn">+</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            <?php
+                                        }
+                                        ?>
                                     </div>
-                                    <div id="Lunch" class="container-food tab-pane fade p-0"><br>
-                                        <div class="list-of-food">
+                                </div>
+                                <div id="feed" class="container-food tab-pane fade p-0"><br>
+                                    <div class="list-of-food">
+                                        <?php
+                                        $postsql = "SELECT * FROM `food` where type='feed' ORDER BY `id` DESC;";
+                                        $postquery = mysqli_query($con_db, $postsql);
+                                        while ($postfetch = mysqli_fetch_assoc($postquery)) {
+                                            ?>
                                             <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
+                                                <img src=<?php echo $postfetch["img"]; ?>>
                                                 <div class="detail-food">
                                                     <div class="detail-food-title">
-                                                        <h4>نان</h4>
+                                                        <h5 class="food-title"><?php echo $postfetch["title"]; ?></h5>
                                                         <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
+                                                            <?php echo $postfetch["bodytxt"]; ?>
                                                         </p>
                                                         <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
+                                                            <p class="cost-food"><?php echo $postfetch["price"]; ?>
+                                                                <span style="font-weight: lighter;">تومان</span></p>
                                                             <button class="add-cart-btn">+</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            <?php
+                                        }
+                                        ?>
                                     </div>
-                                    <div id="Dinner" class="container-food tab-pane fade p-0"><br>
-                                        <div class="list-of-food">
+                                </div>
+                                <div id="stew" class="container-food tab-pane fade p-0"><br>
+                                    <div class="list-of-food">
+                                        <?php
+                                        $postsql = "SELECT * FROM `food` where type='stew' ORDER BY `id` DESC;";
+                                        $postquery = mysqli_query($con_db, $postsql);
+                                        while ($postfetch = mysqli_fetch_assoc($postquery)) {
+                                            ?>
                                             <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
+                                                <img src=<?php echo $postfetch["img"]; ?>>
                                                 <div class="detail-food">
                                                     <div class="detail-food-title">
-                                                        <h4>نان</h4>
+                                                        <h5 class="food-title"><?php echo $postfetch["title"]; ?></h5>
                                                         <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
+                                                            <?php echo $postfetch["bodytxt"]; ?>
                                                         </p>
                                                         <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
+                                                            <p class="cost-food"><?php echo $postfetch["price"]; ?>
+                                                                <span style="font-weight: lighter;">تومان</span></p>
                                                             <button class="add-cart-btn">+</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div id="appetizer" class="container-food tab-pane fade p-0"><br>
+                                    <div class="list-of-food">
+                                        <?php
+                                        $postsql = "SELECT * FROM `food` where type='appetizer' ORDER BY `id` DESC;";
+                                        $postquery = mysqli_query($con_db, $postsql);
+                                        while ($postfetch = mysqli_fetch_assoc($postquery)) {
+                                            ?>
                                             <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
+                                                <img src=<?php echo $postfetch["img"]; ?>>
                                                 <div class="detail-food">
                                                     <div class="detail-food-title">
-                                                        <h4>نان</h4>
+                                                        <h5 class="food-title"><?php echo $postfetch["title"]; ?></h5>
                                                         <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
+                                                            <?php echo $postfetch["bodytxt"]; ?>
                                                         </p>
                                                         <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
+                                                            <p class="cost-food"><?php echo $postfetch["price"]; ?>
+                                                                <span style="font-weight: lighter;">تومان</span></p>
                                                             <button class="add-cart-btn">+</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="content-list-menu">
-                                                <img src="img/laugenbrotchen-300x199.jpg">
-                                                <div class="detail-food">
-                                                    <div class="detail-food-title">
-                                                        <h4>نان</h4>
-                                                        <p class="food-detail-txt">
-                                                            لورم ایپسوم متن ساختگی با تولید سادگی
-                                                        </p>
-                                                        <div class="detail-food-footer">
-                                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                                            <button class="add-cart-btn">+</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 cart-section">
-                                <div class="cart-section-title">
-                                    <img src="img/trolley.png">
-                                    <span>سبد خرید</span>
-                                </div>
-                                <hr style="background-color: #ccc;margin: 0px;">
+                        </div>
+                        <div class="col-lg-3 cart-section">
+                            <div class="cart-section-title">
+                                <img src="img/trolley.png">
+                                <span>سبد خرید</span>
+                            </div>
+                            <hr style="background-color: #ccc;margin: 0px;">
 
-                                <div class="cart-section-empty">
-                                    <p>سبد خرید شما خالی است</p>
-                                </div>
-                                <div class="cart-section-content">
-                                    <div class="detail-food-selected">
-                                        <div class="food-selected-part1">
-                                            <h4>نان</h4>
-                                            <input type="number" placeholder="0">
-                                        </div>
-                                        <div class="food-selected-part2">
-                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                            <button class="remove-cart-btn">-</button>
-                                        </div>
-                                    </div>
-                                    <hr style="background-color: #ccc;margin: 0px;">
-                                    <div class="detail-food-selected">
-                                        <div class="food-selected-part1">
-                                            <h4>نان</h4>
-                                            <input type="number" placeholder="0">
-                                        </div>
-                                        <div class="food-selected-part2">
-                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                            <button class="remove-cart-btn">-</button>
-                                        </div>
-                                    </div>
-                                    <div class="detail-food-selected">
-                                        <div class="food-selected-part1">
-                                            <h4>نان</h4>
-                                            <input type="number" placeholder="0">
-                                        </div>
-                                        <div class="food-selected-part2">
-                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                            <button class="remove-cart-btn">-</button>
-                                        </div>
-                                    </div>
-                                    <div class="detail-food-selected">
-                                        <div class="food-selected-part1">
-                                            <h4>نان</h4>
-                                            <input type="number" placeholder="0">
-                                        </div>
-                                        <div class="food-selected-part2">
-                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                            <button class="remove-cart-btn">-</button>
-                                        </div>
-                                    </div>
-                                    <div class="detail-food-selected">
-                                        <div class="food-selected-part1">
-                                            <h4>نان</h4>
-                                            <input type="number" placeholder="0">
-                                        </div>
-                                        <div class="food-selected-part2">
-                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                            <button class="remove-cart-btn">-</button>
-                                        </div>
-                                    </div>
-                                    <div class="detail-food-selected">
-                                        <div class="food-selected-part1">
-                                            <h4>نان</h4>
-                                            <input type="number" placeholder="0">
-                                        </div>
-                                        <div class="food-selected-part2">
-                                            <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                            <button class="remove-cart-btn">-</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="price-total">
-                                        <p class="m-0">مجموع</p>
-                                        <p class="cost-food">1000 <span style="font-weight: lighter;">تومان</span></p>
-                                    </div>
+                            <div class="cart-section-empty">
+                                <p>سبد خرید شما خالی است</p>
+                            </div>
+                            <div class="cart-section-content">
+                            </div>
+                            <div class="price-total">
+                                <p class="m-0">مجموع</p>
+                                <p class="total-cost-food"> 0 <span
+                                            style="font-weight: lighter;font-size: 13px">تومان</span></p>
+                                <div class="btns-pay-can">
+                                    <a href="#" class="btn btn-success">پرداخت</a>
+                                    <a href="#" class="btn btn-danger">پاک کردن</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-        </div>
-        </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="header-gallery">
+                    <img src="img/fish.png">
+                    <h1>گالری تصاویر ما</h1>
+                    <p>حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+                        رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
+                </div>
+                <div class="port-sec">
+                    <div class="btn-filter col-xs-12 text-center">
+                        <button class="filter active" data-filter="all"> نمایش همه</button>
+                        <button class="filter" data-filter=".cat1"> صبحانه</button>
+                        <button class="filter" data-filter=".cat2">ناهار</button>
+                        <button class="filter" data-filter=".cat3">شام</button>
+                    </div>
+                    <div class="row mixit m-0">
+                        <div class="col-md-4 mix cat1 filter-img mb-3">
+                            <img src="img/gallery_1.jpg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-md-4 mix cat2 filter-img mb-3">
+                            <img src="img/gallery_2.jpg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-md-4 mix cat2 filter-img mb-3">
+                            <img src="img/gallery_3.jpg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-md-4 mix cat3 filter-img mb-3">
+                            <img src="img/gallery_4.jpg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-md-4 mix cat3 filter-img mb-3">
+                            <img src="img/gallery_5.jpg" class="img-fluid" alt="img">
+                        </div>
+                        <div class="col-md-4 mix cat1 filter-img mb-3">
+                            <img src="img/gallery_6.jpg" class="img-fluid" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-section">
+                    <div class="send-comment-title">
+                        <img src="img/chat.png">
+                        <h1>ارسال نظر</h1>
+                        <p>نظرات و پیشنهادات خود را برای ما ارسال کنید</p>
+                    </div>
+                    <div class="send-comment-content">
+                        <div class="send-comment-form">
+                            <div class="send-comment-form-row">
+                                <input type="text" id="name" autocomplete="off" placeholder="نام">
+                                <input type="email" id="email" placeholder="ایمیل">
+                                <input type="text" id="object" placeholder="موضوع">
+                            </div>
+                            <textarea id="comment" cols="100" rows="7"
+                                      placeholder="متن مورد نظر را وارد کنید..."></textarea>
+                            <button id="send-comment-btn" type="submit">ارسال نظر</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="row">
                 <div class="header-gallery">
