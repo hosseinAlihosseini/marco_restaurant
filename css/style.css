@@ -1,0 +1,424 @@
+@font-face {
+    font-family: "vazir";
+    src: url("font/Vazir-Regular.ttf");
+}
+
+body {
+    font-family: vazir;
+}
+
+.main-container {
+    max-width: 1350px;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(25, 25, 25, 0.9);
+}
+
+.navbar-brand {
+    margin-right: 50px;
+}
+
+.container1 {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.mynavbar {
+    justify-content: space-around;
+}
+
+.mynavbar ul li {
+    padding: 5px 10px;
+}
+
+.mynavbar ul li a {
+    padding: 5px;
+    color: aliceblue;
+    transition: 0.3s;
+}
+
+.mynavbar ul li a:hover {
+    color: #d40305;
+}
+
+.search-input {
+    width: 200px;
+    height: 40px;
+    padding-right: 5px;
+    outline: none;
+    border-radius: 0px 5px 5px 0px;
+    border: 0px;
+}
+
+.btn-search {
+    outline: none;
+    height: 40px;
+    border: 1px;
+    padding: 0px 20px;
+    cursor: pointer;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #d40305;
+    transition: 0.3s;
+    color: aliceblue;
+}
+
+.search-btn:hover,
+.search-btn:focus {
+    outline: none;
+    background-color: #ad0303;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/service-img2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wellcome-inner {
+    text-align: center;
+    color: aliceblue;
+    display: block;
+    margin-top: 90px;
+}
+
+.wellcome-inner h1 {
+    font-size: 50px;
+    max-width: 600px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: rgba(25, 25, 25, 0.6);
+    border-radius: 5px;
+}
+
+.wellcome-inner p {
+    max-width: 700px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    background-color: rgba(25, 25, 25, 0.6);
+}
+
+.order-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #d40305;
+    color: aliceblue;
+}
+
+.order-btn:hover {
+    background-color: #ad0303;
+    color: aliceblue;
+}
+
+.about-section {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.title-about {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.title-about:after {
+    content: "";
+    background-color: #d40305;
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    right: 0px;
+    bottom: -20px;
+}
+
+.service-section {
+    width: 100%;
+    min-height: 300px;
+    margin: 20px auto;
+    background-image: url("../img/service-img4.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.service-section-title {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.service-section-title h2 {
+    width: 370px;
+    background-color: rgba(25, 25, 25, 0.8);
+    margin: 30px auto 15px;
+    padding: 10px 15px;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.service-section-title p {
+    width: 450px;
+    color: aliceblue;
+    background-color: rgba(25, 25, 25, 0.8);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card-service {
+    width: 99%;
+    min-height: 250px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(212, 3, 5, 0.6);
+    transition: 0.4s;
+}
+
+.card-service:hover {
+    box-shadow: 0 0px 15px 5px rgba(212, 3, 5, 0.6);
+}
+
+.card-service img {
+    width: 40%;
+    height: auto;
+}
+
+.card-service h4 {
+    font-weight: bold;
+    color: aliceblue;
+    margin: 15px auto;
+}
+
+.card-service p {
+    color: aliceblue;
+    font-weight: lighter;
+}
+
+.header-gallery {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-gallery img {
+    width: 100px;
+    height: auto;
+}
+
+.header-gallery h1 {
+    position: relative;
+    width: fit-content;
+    margin: 20px auto 30px;
+}
+
+.header-gallery h1:after {
+    content: "";
+    background-color: #d40305;
+    position: absolute;
+    width: 90px;
+    height: 10px;
+    right: 0px;
+    bottom: -20px;
+}
+
+.header-gallery p {
+    font-size: 15px;
+    max-width: 750px;
+    margin: 5px auto;
+}
+
+.port-sec {
+    width: 100%;
+    height: auto;
+}
+
+.btn-filter {
+    margin: 5px auto 20px;
+}
+
+.filter {
+    background-color: #d40305;
+    color: aliceblue;
+    padding: 10px 23px;
+    border: 0px;
+    border-radius: 3px;
+    transition: 0.4s all;
+    outline: none;
+}
+
+.filter:hover {
+    background: #ad0303;
+    color: aliceblue;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-filter .active {
+    background: #ad0303;
+    color: aliceblue;
+}
+
+.filter-img img {
+    width: 90%;
+    height: auto;
+    margin: auto 5%;
+    border-radius: 3px;
+}
+
+.footer-section {
+    height: auto;
+    background-color: rgba(25, 25, 25, 0.9);
+    margin-top: 30px;
+}
+
+.footer-section-inner {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.footer-section-inner>div>h4 {
+    margin: 20px 0px;
+    color: #d40305;
+}
+
+.about-marco-footer p {
+    font-size: 15px;
+    color: aliceblue;
+}
+
+.about-marco-footer ul {
+    list-style: none;
+    display: flex;
+    margin-top: 30px;
+}
+
+.about-marco-footer ul li a {
+    font-size: 20px;
+    color: aliceblue;
+    background-color: #d40305;
+    border-radius: 30px;
+    padding: 2px 8px;
+    margin-left: 5px;
+}
+
+.footer-menu li {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    color: aliceblue;
+}
+
+.footer-menu li a:hover {
+    margin-right: 5px;
+    color: #d40305;
+}
+
+.copy-right {
+    background-color: #d40305;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.copy-right p {
+    color: aliceblue;
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+    .food-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about-section {
+        text-align: center;
+    }
+    .title-about {
+        width: 304px;
+        margin: 20px auto 40px;
+    }
+    .menubar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        display: flex;
+        justify-content: space-around;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mynavbar form {
+        display: none;
+    }
+    .wellcome-inner {
+        margin-top: 0px;
+    }
+    .cart-section {
+        width: 80%;
+        margin: 20px auto 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .list-of-food {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
